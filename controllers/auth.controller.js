@@ -69,7 +69,7 @@ export const login = async (req, res) => {
 export const infoUser = async (req, res) => {
     try {
         const miUser = await miU.findByPk(req.uid);
-        return res.json({ uid: miUser.Id, Account: miUser.Account, Email: miUser.Email, Address: miUser.Address });
+        return res.json({ uid: miUser.Id, Account: miUser.Account, Name: miUser.Name, Email: miUser.Email, Address: miUser.Address });
     } catch (error) {
         return res.status(500).json({error: "伺服器錯誤"});
     }

@@ -7,7 +7,7 @@ export const book = database.define('books',{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        defaultValue: false,
+        // defaultValue: false,
         allowNull: false
     },
     Name: {
@@ -28,6 +28,3 @@ export const book = database.define('books',{
     }
 });
 
-miO.belongsToMany(book, {
-    through: 'mioItem'
-})

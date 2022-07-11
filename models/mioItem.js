@@ -7,7 +7,7 @@ export const mioItem = database.define('mioItem',{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        defaultValue: false,
+        // defaultValue: false,
         allowNull: false
     },
     Amount:{

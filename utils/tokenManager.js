@@ -9,7 +9,7 @@ export const generateToken = (uid) => {
 
         // TODO 儲存時間限制
 
-        const token = jwt.sign({uid}, process.env.JWT_SECRET, {expiresIn})
+        const token = jwt.sign({uid}, "process.env.JWT_SECRET", {expiresIn})
         return {token, expiresIn}
     } catch (error) {
         console.log(error);
@@ -21,10 +21,10 @@ export const generateToken = (uid) => {
 export const generateRefreshToken = (uid, res) => {
     const expiresIn = 60 * 60 * 24 * 30;
     try {
-        const refreshToken = jwt.sign({uid}, process.env.JWT_REFRESH, {expiresIn})
+        const refreshToken = jwt.sign({uid}, "process.env.JWT_REFRESH", {expiresIn})
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: !(process.env.MODO === "developer"),
+            secure: !("process.env.MODO" === "developer"),
             expires: new Date(Date.now() + expiresIn * 1000)
         });
     } catch (error) {
@@ -37,7 +37,7 @@ export const TokenVerificationErrors = {
     "jwt expired": "JWT過期",
     "invalid token": "Token無效",
     "No Bearer": "請使用Bearer格式",
-    "jwt malformed": "JWT格式無效"
+    "jwt malformed": "JWT格式無效或沒有token"
 };
 
 /*

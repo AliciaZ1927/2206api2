@@ -5,7 +5,7 @@ export const requireRefreshToken = (req, res, next) => {
     try {
         const refreshTokenCookie = req.cookies.refreshToken;
         if(!refreshTokenCookie) throw new Error("token不存在")
-        const {uid} = jwt.verify(refreshTokenCookie, process.env.JWT_REFRESH);
+        const {uid} = jwt.verify(refreshTokenCookie, "process.env.JWT_REFRESH");
         
         req.uid = uid;
         next();

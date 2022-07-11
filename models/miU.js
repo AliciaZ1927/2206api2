@@ -9,7 +9,7 @@ export const miU = database.define('miU',{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        defaultValue: false,
+        // defaultValue: false,
         allowNull: false
     },
     Account: {

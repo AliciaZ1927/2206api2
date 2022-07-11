@@ -2,12 +2,13 @@ import { DataTypes } from 'sequelize';
 import {database} from '../database/connectdb.js';
 
 
+
 export const miO = database.define('miO', {
     OrderId: {
         type: DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement: true,
-        defaultValue: false,
+        // defaultValue: false,
         allowNull: false
     },
     Quantity:{
@@ -22,4 +23,3 @@ export const miO = database.define('miO', {
     },
 
 });
-
